@@ -1,0 +1,204 @@
+\header{nicola}{giacchetta}{\normalfont software engineer
+}
+
+\newcommand*{\img}[1]{%
+    \raisebox{-.1\baselineskip}{%
+        \includegraphics[
+        height=\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
+
+
+%------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+%\vspace{-0.18cm}
+\section{\normalfont contact}
+\img{img_tube.png} Haggerston
+London, UK
+~
+\myNumberUK
+\href{mailto:\myEmail}{hello {\emph{at}} nicolagiacchetta.it}
+\href{http://www.nicolagiacchetta.it/}{www.nicolagiacchetta.it}
+\raisebox{-0.4ex}{\skype{}} nicola.giacchetta
+\faicon{github} \hspace{0.02cm} \href{https://github.com/nicolagiacchetta}{ nicolagiacchetta}
+\faicon{linkedin} \hspace{0.02cm} \href{https://www.linkedin.com/in/nicolagiacchetta}{ nicolagiacchetta}
+%\colorGitHubLogo{} \href{https://github.com/nicolagiacchetta}{nicolagiacchetta}
+%\colorLinkedinSign{} \href{https://www.linkedin.com/in/nicolagiacchetta}{ nicolagiacchetta}
+~
+\vspace{-0.1cm}
+\section{\normalfont languages}
+\textbf{Italian}: mother tongue
+\textbf{English}: advanced
+\textbf{French}: conversational
+\textbf{Spanish}: conversational
+~
+\vspace{-0.1cm}
+\section{\normalfont skills}
+\textbf{Java Ecosystem}:\\ Java8, Gradle, Maven, Jenkins, Dropwizard, Tomcat, JUnit, Mockito
+\textbf{Message/Streaming Platform}: Apache Kafka
+\textbf{Databases}:\\ MySql, Couchbase
+\textbf{Cloud Services}:\\ AWS Dynamo DB,\\ Google Cloud Datastore
+\textbf{Collaboration Tools}:\\ GitHub, SVN, Perforce 
+\textbf{Frontend}: Html5, CSS3, Javascript, JQuery
+\textbf{Other}: Bash, XML, JSON,\\ PHP, C/C++ 
+%CORBA, \LaTeX
+~
+\vspace{-0.1cm}
+\section{\normalfont interests}
+\textbf{Professional}
+Distributed Systems
+Microservices
+RESTful APIs
+Clean Code
+~
+\vspace{-0.1cm}
+\textbf{Personal}
+football
+tennis
+\href{https://www.discogs.com/user/little_jacket/collection}{vinyls}
+cooking
+\href{https://www.flickr.com/photos/nicolagiacchetta}{photography}
+traveling
+~
+\end{aside}
+
+%------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%------------------------------------------------------------------------------
+\vspace{-0.3cm}
+\section{\normalfont education}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{Oct 2015}
+{Master {\normalfont of Computer Engineering}}
+{Napoli, Italy}
+%------------------------------------------------
+{\href{http://www.unina.it/home}{Università degli Studi di Napoli Federico II}}\\
+Thesis: \emph{Resource efficient sensor allocation for geographic range queries in IoT Service Orchestration}.\\
+%Advisors: \emph{\href{https://www.researchgate.net/profile/Tobias_Jacobs}{Dr. Jacobs Tobias}, \href{https://www.researchgate.net/profile/Simon_Pietro_Romano}{Romano Simon Pietro}}\\
+Final Grade: \emph{110/110}
+\vspace{-.2cm}
+%------------------------------------------------
+
+\entry
+{Dec 2011}
+{Bachelor {\normalfont of Computer Engineering}}
+{Napoli, Italy}
+%------------------------------------------------
+{Università degli Studi di Napoli Federico II}\\
+%Thesis: \emph{Scenari di Cloud Computing per la PA}.\\
+%Advisors: \emph{Chianese Vincenzo}\\
+%Final Grade: \emph{92/110}
+%\vspace{-.2cm}
+%------------------------------------------------
+
+\end{entrylist}
+
+%------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%------------------------------------------------------------------------------
+\vspace{-.4cm}
+\section{\normalfont work experience}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{Dec 2016--Present}
+{Java Backend Developer {\normalfont \emph{\href{https://www.nexmo.com/}{Nexmo}}}}
+{London, UK}
+{Designed and maintained the core backend of a Cloud Communication Platform, troubleshooting concurrency bugs, as well as scalability and performance issues in a large (\textasciitilde N x 1000 RPS on 6 DCs) real-time distributed system.
+\vspace{-.2cm}
+\begin{itemize}[leftmargin=.6cm]
+	\item developed new RESTful APIs  
+	\item extracted 3 microservices from a complex monolithic application
+	\item worked on performance bottlenecks due to the low cardinality of AWS Dynamo DB indexes
+	\item worked on the migration from AWS DynamoDB to Google Cloud Datastore
+	\item worked on a data pipeline to anonymize users' PIIs in the platform to comply with the \href{https://en.wikipedia.org/wiki/General_Data_Protection_Regulation}{GDPR}
+	\item refactored an important part of the codebase (\textasciitilde 10K LoC) to comply with the GDPR
+\end{itemize}
+}
+
+\entry
+{Dec 2015--Oct 2016}
+{Software Engineer {\normalfont \emph{\href{https://www.eidosmedia.com/}{EidosMedia}}}}
+{Milan, Italy}
+{Developed a software layer to expose the core functionalities of the backend of a Digital Content Publishing Platform via RESTful APIs.  
+\vspace{-.2cm}
+\begin{itemize}[leftmargin=.6cm] 
+	\item developed algorithms to manage the internal document model of the platform
+	\item increased unit test coverage (from \textasciitilde 30\% to \textasciitilde 90\%)
+	\item refactored a key internal web service reducing its codebase from \textasciitilde 5000 to \textasciitilde 4000 LoC
+	\item implemented a plugin for the integration with the Apple News API 
+\end{itemize}
+}
+
+\entry
+{Jan--Jun 2015}
+{Research \& Development Intern {\normalfont \emph{\href{https://uk.nec.com/}{NEC Laboratories Europe}}}}
+{Heidelberg, Germany}
+{Built a Java module implementing a resource efficient sensor allocation algorithm for geographic range queries to be integrated in the \href{https://github.com/Aeronbroker/Aeron}{IoT Broker GE}.
+\vspace{-.2cm}
+\begin{itemize}[leftmargin=.6cm]
+	\item carried out most of the scientific research to find an algorithmic solution for the problem
+	\item implemented the chosen algorithm in Java and a JavaFX-based simulation environment
+\end{itemize}
+}
+
+%------------------------------------------------
+\entry
+{Mar--Dec 2014}
+{Web Developer {\normalfont \emph{\href{http://www.studiointlc.com/}{StudioInTlc}}}}
+{Scafati, Italy}
+{Provided expertise and deep understanding of the web tech stack (TCP/IP, HTTP, HTML5, CSS3, JavaScript, PHP), gained  experience using the most common CMS platforms (Wordpress, Prestashop) \& in troubleshooting cross-browser and cross-devices compatibility issues.
+}
+
+%------------------------------------------------
+\end{entrylist}
+
+%------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%------------------------------------------------------------------------------
+%\vspace{.2cm}
+\section{\normalfont extra curricular activities}
+
+\begin{entrylist}
+\entry
+{Jun 2017}
+{Team Kanban Practitioner (TKP) {\normalfont \emph{\href{https://edu.leankanban.com/}{Lean Kanban University}}}}
+{London, UK}
+{Completed training in improved  collaboration  and  Team  Kanban concepts based on the Kanban Method and accepted by Lean Kanban University as a Team Kanban Practitioner.}
+
+\entry
+{Feb 2013--Dec 2014}
+{Freelance Web Developer}
+{Naples, Italy}
+{Implemented web solutions (websites and e-commerce) for clients of various markets.
+\vspace{-.2cm}
+\begin{itemize}[leftmargin=.6cm]
+	\item fashion \& clothing (\href{http://www.plainstore.it/}{Plainstore.it}, Revenge)
+	\item retail (\href{http://www.la-riggiola.com/}{La Riggiola})
+	\item art: film production (O'Groove), singers (Carola Moccia, Be Quiet Nights)
+\end{itemize}
+}
+
+\entry
+{Jan 2012--Feb 2013}
+{Co-Founder \& Administrator {\normalfont \emph{Zerottouno.it}}}
+{Naples, Italy}
+{Co-founded a website where the users could get all-round information about the town of Naples: news, sports, events, multimedia and so on. The aim was to create a virtual community built around a news aggregator.  
+\vspace{-.2cm}
+\begin{itemize}[leftmargin=.6cm]
+	\item co-managed a team of 9 people (6 bloggers, 1 UI designer, 2 Developers)
+	\item built a community of thousands of active users (\textasciitilde N x 100K unique page-views per Month)	 
+\end{itemize} 
+}
+%------------------------------------------------
+\end{entrylist}

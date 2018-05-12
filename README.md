@@ -1,2 +1,5 @@
-# resume
-My résumé written in Latex and based on the Fancy CV template created by Adrien Friggeri.
+# Nicola Giacchetta's Résumé
+This repo contains the sources in Latex of my résumé. 
+
+## Acknowledgements
+The résumé is based on a template originally created by Adrien Friggeri (downloadable [here](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv)), then re-adapted by Kim Heiligenstein (@kitschcocktail).
