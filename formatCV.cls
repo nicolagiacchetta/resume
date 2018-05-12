@@ -51,14 +51,6 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-%\newfontfamily\bodyfont[]{Helvetica Neue}
-%\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-%\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
-%
-%\defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
-%
-%\setmathfont{XITS Math}
 \usepackage{fontspec} 
 \usepackage{fontawesome}
 
@@ -204,15 +196,10 @@
 %%%%%%%%%%%%%%%%%
 \newcommand{\colorLinkedinSign}{\textcolor{darkgray}{\faLinkedinSign}}
 
-
 %%%%%%%%%%%%%%%
 % GitHub Logo %
 %%%%%%%%%%%%%%%
 \newcommand{\colorGitHubLogo}{\textcolor{darkgray}{\faGithubSign}}
-
-%%%%%%%%%%%%%%%%%
-%% Bibliography %
-%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
