@@ -37,21 +37,21 @@ London, UK
 ~
 \vspace{-0.1cm}
 \section{\normalfont skills}
-\textbf{Java Ecosystem}:\\ Java8, Gradle, Maven, Jenkins, Dropwizard, Tomcat, JUnit, Mockito
+\textbf{Java Ecosystem}:\\ Java, Gradle, Maven, Jenkins, Dropwizard, Tomcat, JUnit, Mockito
 \textbf{Message/Streaming Platform}: Apache Kafka
 \textbf{Databases}:\\ MySql, Couchbase
 \textbf{Cloud Services}:\\ AWS Dynamo DB,\\ Google Cloud Datastore
 \textbf{Collaboration Tools}:\\ GitHub, SVN, Perforce 
 \textbf{Frontend}: Html5, CSS3, Javascript, JQuery
-\textbf{Other}: Consul, Docker, Bash, XML, JSON,\\ PHP, C/C++ 
+\textbf{Other}: Consul, Docker, Nomad, Bash, XML, JSON,\\ PHP, C/C++ 
 %CORBA, \LaTeX
 ~
 \vspace{-0.1cm}
 \section{\normalfont interests}
 \textbf{Professional}
 Distributed Systems
+Databases
 Microservices
-RESTful APIs
 Clean Code
 ~
 \vspace{-0.1cm}
@@ -112,16 +112,15 @@ Final Grade: \emph{110/110}
 {Dec 2016--Present}
 {Java Backend Developer {\normalfont \emph{\href{https://www.nexmo.com/}{Nexmo}}}}
 {London, UK}
-{Designed and maintained the core backend of a Cloud Communication Platform, troubleshooting concurrency bugs, as well as scalability and performance issues in a large (\textasciitilde N x 1000 RPS on 6 DCs) real-time distributed system.
+{Designed and maintained the core backend of a Cloud Communication Platform, mainly focused on services High-Availabilitization, data replication and data migration.
 \vspace{-.2cm}
 \begin{itemize}[leftmargin=.6cm]
-	\item developed new RESTful APIs  
-	\item extracted 3 microservices from a complex monolithic application
-	\item worked on performance bottlenecks due to the low cardinality of AWS Dynamo DB indexes
-	\item worked on the migration from AWS DynamoDB to Google Cloud Datastore
-	\item worked on a data pipeline to anonymize users' PIIs in the platform to comply with the \href{https://en.wikipedia.org/wiki/General_Data_Protection_Regulation}{GDPR}
+	\item worked on a tool for Change Data Capture to perform MySQL Binlog Mining for Master-Slave replication, changes notifications and generation of materialized view to implement a CQRS-style architecture
+	\item worked on database migrations
+	\item extracted microservices from a complex monolithic application
 	\item implemented a service to perform Failure Detection and health statuses aggregation
-	\item worked on a tool to perform cross-DC MySql Master-Slave replication and Master failover
+	\item worked on performance bottlenecks due to the low cardinality of AWS Dynamo DB indexes
+	\item worked on a data pipeline to anonymize users' PIIs in the platform to comply with the \href{https://en.wikipedia.org/wiki/General_Data_Protection_Regulation}{GDPR}
 	\item mentored junior team members and took part in several hiring processes
 \end{itemize}
 }
@@ -133,6 +132,7 @@ Final Grade: \emph{110/110}
 {Developed a software layer to expose the core functionalities of the backend of a Digital Content Publishing Platform via RESTful APIs.  
 \vspace{-.2cm}
 \begin{itemize}[leftmargin=.6cm] 
+	\item developed new RESTful APIs  
 	\item developed algorithms to manage the internal document model of the platform
 	\item increased unit test coverage (from \textasciitilde 30\% to \textasciitilde 90\%)
 	\item refactored a key internal web service reducing its codebase from \textasciitilde 5000 to \textasciitilde 4000 LoC
@@ -167,23 +167,32 @@ Final Grade: \emph{110/110}
 %------------------------------------------------------------------------------
 \section{\normalfont extra curricular activities}
 \begin{entrylist}
+
+
 \entry
-{Jun 2017}
-{Team Kanban Practitioner (TKP) {\normalfont \emph{\href{https://edu.leankanban.com/}{Lean Kanban University}}}}
-{London, UK}
-{Completed training in improved  collaboration  and  Team  Kanban concepts based on the Kanban Method and accepted by Lean Kanban University as a Team Kanban Practitioner.}
+{4-7 Nov 2019}
+{\href{https://conferences.oreilly.com/software-architecture/sa-eu/public/schedule/detail/78661
+}{O'Reilly: Software Architecture Conference} {\normalfont \emph{Conference Talk}}}
+{Berlin, DE}
+{Extensible autonomous transactions in the world of microservices}
+
+\entry
+{22-24 Oct 2019}
+{\href{https://aceu19.apachecon.com/session/extensible-autonomous-transactions-world-microservices-using-apache-kafka}{ApacheCon Europe 2019} {\normalfont \emph{Conference Talk}}}
+{Berlin, DE}
+{Extensible Autonomous Transactions In The World of Microservices using Apache Kafka}
 
 \entry
 {Feb 2013--Dec 2014}
 {Freelance Web Developer}
 {Naples, Italy}
 {Implemented web solutions (websites and e-commerce) for clients of various markets.
-\vspace{-.2cm}
-\begin{itemize}[leftmargin=.6cm]
-	\item fashion \& clothing (\href{http://www.plainstore.it/}{Plainstore.it}, Revenge)
-	\item retail (\href{http://www.la-riggiola.com/}{La Riggiola})
-	\item art: film production (O'Groove), singers (Carola Moccia, Be Quiet Nights)
-\end{itemize}
+%\vspace{-.2cm}
+%\begin{itemize}[leftmargin=.6cm]
+%	\item fashion \& clothing (\href{http://www.plainstore.it/}{Plainstore.it}, Revenge)
+%	\item retail (\href{http://www.la-riggiola.com/}{La Riggiola})
+%	\item art: film production (O'Groove), singers (Carola Moccia, Be Quiet Nights)
+%\end{itemize}
 }
 
 \entry
