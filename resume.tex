@@ -1,11 +1,15 @@
-\documentclass[]{formatCV} 
+\documentclass[]{formatCV}
 
 \usepackage{enumitem}
 \usepackage{graphicx}
 
+% Point the fontawesome package at the local FontAwesome.otf (not installed system-wide)
+\renewfontfamily{\FA}[Path=fonts/fontawesome/opentype/]{FontAwesome.otf}
+
 \input{myInfo}
 
 \begin{document}
+\enlargethispage{2cm}
 \input{cv_nicola}
 \end{document}
 

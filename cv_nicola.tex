@@ -1,4 +1,4 @@
-\header{nicola}{giacchetta}{\normalfont software engineer / engineering manager
+\header{nicola}{giacchetta}{\normalfont software engineering tech lead
 }
 
 \newcommand*{\img}[1]{%
@@ -9,6 +9,29 @@
         keepaspectratio,
         ]{#1}%
     }%
+}
+
+% Company banner + timeline-style roles (dots connected by vertical rail)
+\newcommand{\company}[2]{%
+    \textbf{#1}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=darkgray} #2}\\%
+}
+% \tlrole{id}{title}{date} — role on the timeline; id must be unique
+\newcommand{\tlrole}[3]{%
+    \hspace*{0.35cm}%
+    \tikz[remember picture, baseline=-0.4ex]{\coordinate (tl-#1);}%
+    \hspace{0.45cm}\textbf{\normalsize #2}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=darkgray} #3}\\%
+}
+% \tlconnect{id1}{id2} — draws the vertical rail + dots between two tlroles
+\newcommand{\tlconnect}[2]{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[darkgray, line width=0.7pt] (tl-#1) -- (tl-#2);
+        \fill[darkgray] (tl-#1) circle (2.4pt);
+        \fill[darkgray] (tl-#2) circle (2.4pt);
+    \end{tikzpicture}%
 }
 
 
@@ -24,27 +47,27 @@
 \myNumberUK
 \href{mailto:\myEmail}{hello {\emph{at}} nicolagiacchetta.it}
 \href{http://www.nicolagiacchetta.it/}{www.nicolagiacchetta.it}
-\raisebox{-0.4ex}{\skype{}} nicola.giacchetta
+%\raisebox{-0.4ex}{\skype{}} nicola.giacchetta
 \faicon{github} \hspace{0.02cm} \href{https://github.com/nicolagiacchetta}{ nicolagiacchetta}
 \faicon{linkedin} \hspace{0.02cm} \href{https://www.linkedin.com/in/nicolagiacchetta}{ nicolagiacchetta}
-\faicon{twitter} \hspace{0.02cm} \href{https://twitter.com/N_Giacchetta}{ @n\_giacchetta}
+%\textbf{\small X} \hspace{0.02cm} \href{https://twitter.com/N_Giacchetta}{ @n\_giacchetta}
 ~
 \vspace{-0.1cm}
 \section{\normalfont languages}
 \textbf{Italian}: mother tongue
-\textbf{English}: advanced
+\textbf{English}: fluent
 \textbf{French}: conversational
 \textbf{Spanish}: conversational
 ~
 \vspace{-0.1cm}
 \section{\normalfont skills}
-\textbf{Java Ecosystem}:\\ Java, Gradle, Maven, Jenkins, Dropwizard, Tomcat, JUnit, Mockito
-\textbf{Message/Streaming Platform}: Apache Kafka
-\textbf{Databases}:\\ MySql, Couchbase
-\textbf{Cloud Services}:\\ AWS Dynamo DB,\\ Google Cloud Datastore
-\textbf{Collaboration Tools}:\\ GitHub, SVN, Perforce 
-\textbf{Frontend}: Html5, CSS3, Javascript, JQuery
-\textbf{Other}: Consul, Docker, Nomad, Bash, XML, JSON,\\ Python, Rust, C/C++ 
+\textbf{AI / ML}:\\ Claude Code, Metamate,\\ MCP, RAG, Embeddings,\\ LLM APIs, Prompt Engineering,\\ Agent Design, Evals
+\textbf{Databases}:\\ SQL, MySQL, ZippyDB,\\ Couchbase, TAO
+\textbf{RPC \& Streaming}:\\ Thrift, gRPC, Apache Kafka
+\textbf{Cloud / Build}: AWS, GCP, Buck
+\textbf{Security}:\\ Threat Modeling,\\ MITRE ATT\&CK,\\ Detection Engineering
+\textbf{Languages}:\\ Java, Python, Hack/PHP,\\ Rust, C/C++, Bash
+\textbf{Tools}: GitHub, Perforce,\\ Docker, Consul, Nomad
 %CORBA, \LaTeX
 ~
 \vspace{-0.1cm}
@@ -52,12 +75,12 @@
 \textbf{Professional}
 Distributed Systems
 Databases
-Microservices
-Clean Code
+%Microservices
+Cybersecurity
 ~
 \vspace{-0.1cm}
 \textbf{Personal}
-football
+%football
 tennis
 \href{https://open.spotify.com/user/1171479957}{music}
 \href{https://www.discogs.com/user/little_jacket/collection}{vinyls}
@@ -84,64 +107,73 @@ traveling
 %Thesis: \emph{Resource efficient sensor allocation for geographic range queries in IoT Service Orchestration}.\\
 %Advisors: \emph{\href{https://www.researchgate.net/profile/Tobias_Jacobs}{Dr. Jacobs Tobias}, \href{https://www.researchgate.net/profile/Simon_Pietro_Romano}{Romano Simon Pietro}}\\
 Final Grade: \emph{110/110}
-\vspace{-.2cm}
 %------------------------------------------------
 
-\entry
-{Dec 2011}
-{Bachelor {\normalfont of Computer Engineering}}
-{Napoli, Italy}
-%------------------------------------------------
-{Università degli Studi di Napoli Federico II}\\
-%Thesis: \emph{Scenari di Cloud Computing per la PA}.\\
-%Advisors: \emph{Chianese Vincenzo}\\
-%Final Grade: \emph{92/110}
-%\vspace{-.2cm}
-%------------------------------------------------
+%\entry
+%{Dec 2011}
+%{Bachelor {\normalfont of Computer Engineering}}
+%{Napoli, Italy}
+%%------------------------------------------------
+%{Università degli Studi di Napoli Federico II}\\
+%%Thesis: \emph{Scenari di Cloud Computing per la PA}.\\
+%%Advisors: \emph{Chianese Vincenzo}\\
+%%Final Grade: \emph{92/110}
+%%\vspace{-.2cm}
+%%------------------------------------------------
 
 \end{entrylist}
 
 %------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
 %------------------------------------------------------------------------------
-\vspace{-.4cm}
 \section{\normalfont work experience}
 
 \begin{entrylist}
 %------------------------------------------------
-\entry
-{Sep 2020--Present}
-{Senior Software Engineer, Infrastructure {\normalfont \emph{\href{https://www.meta.com/}{Meta}}}}
-{London, UK}
-{Working in the Database Engineering team, responsible for the fleet management of datastores at Meta. 
+\company{\href{https://www.meta.com/}{Meta}}{London, UK}
+\tlrole{meta1}{Staff Software Engineer, Security}{Feb 2026--Present}
+\tlrole{meta2}{Senior Software Engineer, Security}{Jul 2022--Feb 2026}
+\tlrole{meta3}{Senior Software Engineer, Core Data}{Sep 2020--Jul 2022}
+\tlconnect{meta1}{meta2}
+\tlconnect{meta2}{meta3}
+\vspace{-.4cm}
+
+\textbf{\normalsize Security}: Built and scaled Meta's Security Knowledge Graph (millions of entities and edges) --- powering risk and threat enumeration/prioritization, the Security org's topline metrics, and AI agents automating breach-and-attack simulations and detection/investigation/response. Adopted by Offensive, Defensive, Intel, Insider Trust, Detection Engineering, and Security leadership.
 \vspace{-.2cm}
 \begin{itemize}[leftmargin=.6cm]
-	\item developed a unified platform to orchestrate and execute seamless datastore istance placements for different datastores ensuring reliability and availability of the fleet
-	\item contributed to the maintanance of one of the biggest MySQL infrastructure on earth (over 1M nodes and 25 DCs)
-	\item interviewed over 50 candidates  
-	\item mentored junior and mid individual contributors
+	\item grew the team from a single IC to 4 ICs and a Product Owner; own strategic planning and team roadmap
+	\item AI Champion for the Security organization --- driving AI Fluency and knowledge sharing
 \end{itemize}
-}
+\vspace{-.1cm}
+\textbf{\normalsize Core Data}: Database Engineering team, responsible for fleet management of datastores at Meta.
+\vspace{-.5cm}
+\begin{itemize}[leftmargin=.6cm]
+	\item built a unifying control plane for MySQL and ZippyDB, orchestrating instance placements across the fleet to ensure reliability and availability
+	\item contributed to the maintenance of one of the biggest MySQL infrastructures on earth (over 1M nodes and 25 DCs)
+\end{itemize}
+\vspace{-.1cm}
+Across both teams: interviewed over 200 candidates and mentored engineers of all levels.
 
 
-\entry
-{Dec 2016--Aug 2020}
-{Java Backend Developer {\normalfont \emph{\href{https://www.vonage.com/business/}{Vonage}}}}
-{London, UK}
-{Designed and maintained the core backend of a Cloud Communication Platform, mainly focused on services High-Availabilitization, data replication and data migration.
+\company{\href{https://www.vonage.com/business/}{Vonage}}{London, UK}
+\tlrole{von1}{Software Engineer III}{Dec 2018--Aug 2020}
+\tlrole{von2}{Software Engineer II}{Dec 2016--Dec 2018}
+\tlconnect{von1}{von2}
+\vspace{-.4cm}
+
+Backend engineering on a Cloud Communication Platform --- high availability, replication, and migration.
 \vspace{-.2cm}
 \begin{itemize}[leftmargin=.6cm]
-	\item worked on a tool for Change Data Capture to perform MySQL Binlog Mining for Primary-Secondary replication, changes notifications and generation of materialized view 
+	\item built a Change Data Capture tool performing MySQL Binlog Mining for Primary-Secondary replication, change notifications and materialized view generation
 	%to implement a CQRS-style architecture
-	\item worked on database migrations
+	\item led database migrations
 	\item extracted microservices from a complex monolithic application
 	%\item implemented a service to perform Failure Detection and health statuses aggregation
-	\item worked on performance bottlenecks due to the low cardinality of AWS Dynamo DB indexes
+	\item diagnosed and fixed performance bottlenecks caused by low-cardinality AWS DynamoDB indexes
 	%\item worked on a data pipeline to anonymize users' PIIs in the platform to comply with the \href{https://en.wikipedia.org/wiki/General_Data_Protection_Regulation}{GDPR}
-	\item built a new Database Engineering team of 4 ICs 
+	\item built a new Database Engineering team of 4 ICs
 	\item mentored junior team members and took part in many hiring processes
 \end{itemize}
-}
 
 \entry
 {Dec 2015--Oct 2016}
@@ -188,23 +220,16 @@ Final Grade: \emph{110/110}
 
 
 \entry
-{4-7 Nov 2019}
-{\href{https://conferences.oreilly.com/software-architecture/sa-eu/public/schedule/detail/78661
-}{O'Reilly: Software Architecture Conference} {\normalfont \emph{Conference Talk}}}
+{Oct--Nov 2019}
+{Extensible Autonomous Transactions in the World of Microservices {\normalfont \emph{Conference Talks}}}
 {Berlin, DE}
-{Extensible autonomous transactions in the world of microservices}
+{Presented at \href{https://aceu19.apachecon.com/session/extensible-autonomous-transactions-world-microservices-using-apache-kafka}{ApacheCon Europe 2019} and \href{https://conferences.oreilly.com/software-architecture/sa-eu/public/schedule/detail/78661}{O'Reilly Software Architecture Conference}.}
 
-\entry
-{22-24 Oct 2019}
-{\href{https://aceu19.apachecon.com/session/extensible-autonomous-transactions-world-microservices-using-apache-kafka}{ApacheCon Europe 2019} {\normalfont \emph{Conference Talk}}}
-{Berlin, DE}
-{Extensible Autonomous Transactions In The World of Microservices using Apache Kafka}
-
-\entry
-{Jun 2017}
- {Team Kanban Practitioner (TKP) {\normalfont \emph{\href{https://edu.leankanban.com/}{Lean Kanban University}}}} 
-{London, UK} 
-{Completed training in improved  collaboration  and  Team  Kanban concepts basedon the Kanban method and accepted by Lean Kanban University as a Team Kanban Practitioner.}
+%\entry
+%{Jun 2017}
+% {Team Kanban Practitioner (TKP) {\normalfont \emph{\href{https://edu.leankanban.com/}{Lean Kanban University}}}}
+%{London, UK}
+%{Completed training in improved  collaboration  and  Team  Kanban concepts basedon the Kanban method and accepted by Lean Kanban University as a Team Kanban Practitioner.}
 
 %\entry
 %{Feb 2013--Dec 2014}
@@ -217,18 +242,7 @@ Final Grade: \emph{110/110}
 %%	\item retail (\href{http://www.la-riggiola.com/}{La Riggiola})
 %%	\item art: film production (O'Groove), singers (Carola Moccia, Be Quiet Nights)
 %%\end{itemize}
-}
+%}
 
-\entry
-{Jan 2012--Feb 2013}
-{Co-Founder \& Administrator {\normalfont \emph{Zerottouno.it}}}
-{Naples, Italy}
-{Co-founded a website where the users could get all-round information about the town of Naples. The aim was to create a virtual community built around a news aggregator.  
-\vspace{-.2cm}
-\begin{itemize}[leftmargin=.6cm]
-	\item co-managed a team of 9 people (6 bloggers, 1 UI designer, 2 Developers)
-	\item built a community of thousands of active users (\textasciitilde N x 100K unique page-views per Month)	 
-\end{itemize} 
-}
 %------------------------------------------------
 \end{entrylist}
